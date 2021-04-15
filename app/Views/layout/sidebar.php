@@ -32,7 +32,7 @@
                         <i class="bi bi-person-check mr-2"></i>Pengaturan Akun
                     </a>
                     <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">
+                    <a href="/logout" class="dropdown-item">
                         <i class="bi bi-box-arrow-left mr-2"></i>Keluar
                     </a>
                 </div>
