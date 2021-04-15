@@ -12,36 +12,28 @@
     </div>
     <div class="row">
         <div class="col">
-            <a href="/magang/create" class="btn btn-primary m-3">Tambah Data Magang</a>
-            <?php if (session()->getFlashdata('pesan')) : ?>
-                <div class="alert alert-info" role="alert">
-                    <?= session()->getFlashdata('pesan'); ?>
-                </div>
-            <?php endif; ?>
             <table class="table table-striped">
                 <thead>
                     <tr>
                         <th scope="col"></th>
-                        <th scope="col">NIK</th>
-                        <th scope="col">Nama</th>
-                        <th scope="col">Gambar</th>
+                        <th scope="col">Nama Dinas</th>
+                        <th scope="col">Logo</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php $i = 1 + (5 * ($currentPage - 1)); ?>
-                    <?php foreach ($magang as $m) : ?>
+                    <?php $i = 1 + (10 * ($currentPage - 1)); ?>
+                    <?php foreach ($dinas as $d) : ?>
                         <tr>
                             <th scope="row"><?= $i++; ?></th>
-                            <td><?= $m['nik']; ?></td>
-                            <td><?= $m['nama']; ?></td>
-                            <td><img src="/img/<?= $m['gambar']; ?>" class="gambar" alt=""></td>
-                            <td><a href="/magang/<?= $m['magang_id']; ?>" class="btn btn-info">Detail</a></td>
+                            <td><?= $d['jenisdinas']; ?></td>
+                            <td><img src="/img/dinas/<?= $d['logo']; ?>" class="logo" alt=""></td>
+                            <td><a href="" class="btn btn-info">Detail</a></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
-            <?= $pager->links('magang', 'magang_pagination'); ?>
+            <?= $pager->links('dinas', 'dinas_pagination'); ?>
         </div>
     </div>
 </div>

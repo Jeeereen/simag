@@ -17,4 +17,11 @@ class MagangModel extends Model
         }
         return $this->where(['magang_id' => $magang_id])->first();
     }
+    public function search($keyword)
+    {
+        // $builder = $this->table('dinas');
+        // $builder->like('jenisdinas', $keyword);
+        // return $builder;
+        return $this->table('magang')->like('nama', $keyword)->orLike('alamat', $keyword)->orLike('notp', $keyword)->orlike('jurusan', $keyword)->orLike('nik', $keyword);
+    }
 }

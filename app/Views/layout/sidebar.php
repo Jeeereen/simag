@@ -24,7 +24,7 @@
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                     <div class="dropdown-divider"></div>
                     <a href="#" class="dropdown-item">
-                        <img src="<?= base_url() ?>/img/user2-160x160.jpg" class="img-circle mr-2" style="width: 75px;" alt="User Image">
+                        <img src="/img/user2-160x160.jpg" class="img-circle mr-2" style="width: 75px;" alt="User Image">
                         <span class="float-right">Admin Dinas</span>
                     </a>
                     <div class="dropdown-divider"></div>
@@ -50,18 +50,15 @@
 
         <!-- Sidebar -->
         <div class="sidebar">
-            <!-- SidebarSearch Form -->
-            <div class="form-inline">
-                <div class="input-group" data-widget="sidebar-search">
-                    <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-                    <div class="input-group-append">
-                        <button class="btn btn-sidebar">
-                            <i class="fas fa-search fa-fw"></i>
-                        </button>
-                    </div>
+            <!-- Sidebar user panel (optional) -->
+            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                <div class="image">
+                    <img src="img/gowa.png" class="img-circle elevation-2" alt="Gambar">
+                </div>
+                <div class="info">
+                    <a href="" class="d-block">Dinas</a>
                 </div>
             </div>
-
             <!-- Sidebar Menu -->
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -76,12 +73,31 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/magang" class="nav-link">
-                            <i class="nav-icon bi bi-person-lines-fill"></i>
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon bi bi-list-ul"></i>
                             <p>
-                                Data Magang
+                                Daftar Data
+                                <i class="fas fa-angle-left right"></i>
                             </p>
                         </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/magang" class="nav-link">
+                                    <i class="nav-icon bi bi-person-lines-fill"></i>
+                                    <p>
+                                        Data Magang
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/dinas" class="nav-link">
+                                    <i class="nav-icon bi bi-person-lines-fill"></i>
+                                    <p>
+                                        Data Dinas
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a href="/pages/penilaian" class="nav-link">
