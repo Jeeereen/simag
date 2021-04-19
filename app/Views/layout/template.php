@@ -44,7 +44,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             Anything you want
         </div>
         <!-- Default to the left -->
-        <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; <?= date('Y'); ?> <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
     </footer>
     </div>
     <!-- ./wrapper -->
@@ -72,6 +72,50 @@ scratch. This page gets rid of all links and provides the needed markup only.
             fileGambar.onload = function(e) {
                 imgPreview.src = e.target.result;
             }
+        }
+
+        function nilai1(range1) {
+            document.querySelector('#nilai1').value = range1;
+        }
+
+        function nilai2(range1) {
+            document.querySelector('#nilai2').value = range1;
+        }
+
+        function nilai3(range1) {
+            document.querySelector('#nilai3').value = range1;
+        }
+
+        function nilai4(range1) {
+            document.querySelector('#nilai4').value = range1;
+        }
+
+        function nilai5(range1) {
+            document.querySelector('#nilai5').value = range1;
+        }
+
+        function nilai6(range1) {
+            document.querySelector('#nilai6').value = range1;
+        }
+
+        function nilai7(range1) {
+            document.querySelector('#nilai7').value = range1;
+        }
+
+        function nilai8(range1) {
+            document.querySelector('#nilai8').value = range1;
+        }
+
+        function nilai9(range1) {
+            document.querySelector('#nilai9').value = range1;
+        }
+
+        function nilai10(range1) {
+            document.querySelector('#nilai10').value = range1;
+        }
+
+        function nilai11(range1) {
+            document.querySelector('#nilai11').value = range1;
         }
     </script>
 </body>

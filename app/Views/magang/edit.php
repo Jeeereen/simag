@@ -6,6 +6,28 @@
         <div class="col-8">
             <form action="/magang/update/<?= $magang['magang_id']; ?>" method="post" class="mt-5" enctype="multipart/form-data">
                 <?= csrf_field(); ?>
+                <?php if (in_groups('user')) : ?>
+                    <fieldset disabled>
+                        <div class="row mb-3">
+                            <label for="hidden" class="col-sm-2 col-form-label">Bagian</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="hidden" value="<?= user()->fullname; ?>" name="hidden">
+
+                            </div>
+                        </div>
+                    </fieldset>
+                    <input type="hidden" name="dinas" value="<?= user()->fullname; ?>">
+                <?php else :  ?>
+                    <div class="row mb-3">
+                        <label class="input-group-text" for="dinas">Daftar Nama Dinas <i class="bi bi-arrow-right ml-2"></i></label>
+                        <select class="form-select" id="dinas" name="dinas">
+                            <option selected>Pilih Dinas...</option>
+                            <?php foreach ($dinas as $d) : ?>
+                                <option value="<?= $d->fullname; ?>"><?= $d->fullname; ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                <?php endif; ?>
                 <input type="hidden" name="gambarLama" value="<?= $magang['gambar']; ?>">
                 <div class="row mb-3">
                     <label for="nama" class="col-sm-2 col-form-label">Nama</label>
@@ -73,7 +95,18 @@
                 <div class="row mb-3">
                     <label for="agama" class="col-sm-2 col-form-label">Agama</label>
                     <div class="col-sm-10">
-                        <input type="select" class="form-control" id="agama" value="<?= (old('agama')) ? old('agama') : $magang['agama']; ?>" name="agama">
+                        <div class="input-group mb-3">
+                            <label class="input-group-text" for="agama">Daftar Nama Agama <i class="bi bi-arrow-right ml-2"></i></label>
+                            <select class="form-select" id="agama" name="agama">
+                                <option selected>Pilih Agama...</option>
+                                <option value="Islam" <?= ($magang['agama'] == 'Islam') ? 'selected' : ''; ?>>Islam</option>
+                                <option value="Protestan" <?= ($magang['agama'] == 'Protestan') ? 'selected' : ''; ?>>Protestan</option>
+                                <option value="Katolik" <?= ($magang['agama'] == 'Katolik') ? 'selected' : ''; ?>>Katolik</option>
+                                <option value="Hindu" <?= ($magang['agama'] == 'Hindu') ? 'selected' : ''; ?>>Hindu</option>
+                                <option value="Buddha" <?= ($magang['agama'] == 'Buddha') ? 'selected' : ''; ?>>Buddha</option>
+                                <option value="Khonghucu" <?= ($magang['agama'] == 'Khonghucu') ? 'selected' : ''; ?>>Khonghucu</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
                 <div class="row mb-3">

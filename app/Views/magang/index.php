@@ -4,10 +4,6 @@
 <div class="container">
     <div class="col-6 ">
         <form action="" method="post">
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Masukkan pencarian" name="keyword">
-                <button class="btn btn-outline-secondary" type="submit" name="submit">Cari</button>
-            </div>
         </form>
     </div>
     <div class="row">
@@ -29,19 +25,31 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php $i = 1 + (5 * ($currentPage - 1)); ?>
+                    <?php $i = 1; ?>
                     <?php foreach ($magang as $m) : ?>
-                        <tr>
-                            <th scope="row"><?= $i++; ?></th>
-                            <td><?= $m['nik']; ?></td>
-                            <td><?= $m['nama']; ?></td>
-                            <td><img src="/img/<?= $m['gambar']; ?>" class="gambar" alt=""></td>
-                            <td><a href="/magang/<?= $m['magang_id']; ?>" class="btn btn-info">Detail</a></td>
-                        </tr>
+                        <?php if (in_groups('user')) : ?>
+                            <?php if ($m['dinas'] == user()->fullname) : ?>
+                                <tr>
+                                    <th scope="row"><?= $i++; ?></th>
+                                    <td><?= $m['nik']; ?></td>
+                                    <td><?= $m['nama']; ?></td>
+                                    <td><img src="/img/<?= $m['gambar']; ?>" class="gambar" alt=""></td>
+                                    <td><a href="/magang/<?= $m['magang_id']; ?>" class="btn btn-info">Detail</a></td>
+                                </tr>
+                            <?php endif; ?>
+                        <?php else : ?>
+                            <tr>
+                                <th scope="row"><?= $i++; ?></th>
+                                <td><?= $m['nik']; ?></td>
+                                <td><?= $m['nama']; ?></td>
+                                <td><img src="/img/<?= $m['gambar']; ?>" class="gambar" alt=""></td>
+                                <td><a href="/magang/<?= $m['magang_id']; ?>" class="btn btn-info">Detail</a></td>
+                            </tr>
+                        <?php endif; ?>
+
                     <?php endforeach; ?>
                 </tbody>
             </table>
-            <?= $pager->links('magang', 'magang_pagination'); ?>
         </div>
     </div>
 </div>

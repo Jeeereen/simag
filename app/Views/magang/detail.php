@@ -11,7 +11,8 @@
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h5 class="card-title"><?= $magang['nama']; ?></h5>
+                            <h5 class="card-title mb-2"><?= $magang['nama']; ?></h5>
+                            <p class="card-text"><b>Dinas</b> : <?= $magang['dinas']; ?></p>
                             <p class="card-text"><b>NIK</b> : <?= $magang['nik']; ?></p>
                             <p class="card-text"><b>Jurusan</b> : <?= $magang['jurusan']; ?></p>
                             <p class="card-text"><b>Email</b> : <?= $magang['email']; ?></p>

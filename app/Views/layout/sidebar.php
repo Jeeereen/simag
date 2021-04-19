@@ -5,6 +5,9 @@
         <!-- Left navbar links -->
         <ul class="navbar-nav">
             <li class="nav-item">
+                <a class="mt-2 ml-2 nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+            </li>
+            <li class="nav-item">
                 <h1 class="mt-2 ml-2"><?= $title; ?></h1>
             </li>
         </ul>
@@ -24,8 +27,8 @@
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                     <div class="dropdown-divider"></div>
                     <a href="#" class="dropdown-item">
-                        <img src="/img/user2-160x160.jpg" class="img-circle mr-2" style="width: 75px;" alt="User Image">
-                        <span class="float-right">Admin Dinas</span>
+                        <img src="<?= base_url(); ?>/img/<?= user()->user_image; ?>" class="img-circle mr-2" style="width: 75px;" alt="User Image">
+                        <span class="float-right"><?= user()->username; ?></span>
                     </a>
                     <div class="dropdown-divider"></div>
                     <a href="#" class="dropdown-item">
@@ -44,7 +47,7 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a href="index3.html" class="brand-link">
-            <img src="<?= base_url() ?>/img/gowa.png" alt="" class="brand-image img-circle elevation-3" style="opacity: .8">
+            <img src="<?= base_url(); ?>/img/gowa.png" alt="" class="brand-image img-circle elevation-3" style="opacity: .8">
             <span class="brand-text font-weight-light">SIM Magang</span>
         </a>
 
@@ -53,10 +56,10 @@
             <!-- Sidebar user panel (optional) -->
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="image">
-                    <img src="img/gowa.png" class="img-circle elevation-2" alt="Gambar">
+                    <img src="<?= base_url(); ?>/img/<?= user()->user_image; ?>" class="img-circle elevation-2" alt="Gambar">
                 </div>
                 <div class="info">
-                    <a href="" class="d-block">Dinas</a>
+                    <a href="" class="d-block"><?= user()->username; ?></a>
                 </div>
             </div>
             <!-- Sidebar Menu -->
@@ -72,33 +75,44 @@
                             </p>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon bi bi-list-ul"></i>
-                            <p>
-                                Daftar Data
-                                <i class="fas fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="/magang" class="nav-link">
-                                    <i class="nav-icon bi bi-person-lines-fill"></i>
-                                    <p>
-                                        Data Magang
-                                    </p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="/dinas" class="nav-link">
-                                    <i class="nav-icon bi bi-person-lines-fill"></i>
-                                    <p>
-                                        Data Dinas
-                                    </p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+                    <?php if (in_groups('superadmin')) : ?>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon bi bi-list-ul"></i>
+                                <p>
+                                    Daftar Data
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/magang" class="nav-link">
+                                        <i class="nav-icon bi bi-person-lines-fill"></i>
+                                        <p>
+                                            Data Magang
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/dinas" class="nav-link">
+                                        <i class="nav-icon bi bi-person-lines-fill"></i>
+                                        <p>
+                                            Data Dinas
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    <?php elseif (in_groups('user')) : ?>
+                        <li class="nav-item">
+                            <a href="/magang" class="nav-link">
+                                <i class="nav-icon bi bi-person-lines-fill"></i>
+                                <p>
+                                    Data Magang
+                                </p>
+                            </a>
+                        </li>
+                    <?php endif; ?>
                     <li class="nav-item">
                         <a href="/pages/penilaian" class="nav-link">
                             <i class="nav-icon bi bi-file-earmark-bar-graph"></i>

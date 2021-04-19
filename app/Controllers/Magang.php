@@ -16,20 +16,10 @@ class Magang extends BaseController
 
     public function index()
     {
-        $currentPage = $this->request->getVar('page_magang') ? $this->request->getVar('page_magang') : 1;
-
-        $keyword = $this->request->getVar('keyword');
-        if ($keyword) {
-            $magang = $this->magangModel->search($keyword);
-        } else {
-            $magang = $this->magangModel;
-        }
 
         $data = [
             'title' => 'Daftar Magang',
-            'magang' => $this->magangModel->paginate(5, 'magang'),
-            'pager' => $this->magangModel->pager,
-            'currentPage' => $currentPage
+            'magang' => $this->magangModel->getMagang()
         ];
         return view('magang/index', $data);
     }
@@ -50,9 +40,11 @@ class Magang extends BaseController
 
     public function create()
     {
+        $dinas = new \Myth\Auth\Models\UserModel();
         $data = [
             'title' => 'Form Tambah Data Magang',
-            'validation' => \Config\Services::validation()
+            'validation' => \Config\Services::validation(),
+            'dinas' => $dinas->findAll()
         ];
 
         return view('magang/create', $data);
@@ -63,6 +55,7 @@ class Magang extends BaseController
         if (!$this->validate([
             'nama' => 'required',
             'nik' => 'required|is_unique[magang.nik]',
+            'dinas' => 'required',
             'gambar' => 'max_size[gambar,1024]|is_image[gambar]|mime_in[gambar,image/jpg,image/jpeg,image/png]'
         ], [
             'nama' => [
@@ -102,6 +95,7 @@ class Magang extends BaseController
             'alamat' => $this->request->getVar('alamat'),
             'notp' => $this->request->getVar('notp'),
             'agama' => $this->request->getVar('agama'),
+            'dinas' => $this->request->getVar('dinas'),
             'jurusan' => $this->request->getVar('jurusan')
         ]);
         session()->setFlashdata('pesan', 'Data berhasil ditambahkan.');
@@ -124,10 +118,12 @@ class Magang extends BaseController
 
     public function edit($magang_id)
     {
+        $dinas = new \Myth\Auth\Models\UserModel();
         $data = [
             'title' => 'Form Ubah Data Magang',
             'validation' => \Config\Services::validation(),
-            'magang' => $this->magangModel->getMagang($magang_id)
+            'magang' => $this->magangModel->getMagang($magang_id),
+            'dinas' => $dinas->findAll()
         ];
 
         return view('magang/edit', $data);
@@ -135,6 +131,7 @@ class Magang extends BaseController
 
     public function update($magang_id)
     {
+        // dd($this->request->getVar('dinas'));
         $magangLama = $this->magangModel->getMagang($magang_id);
         if ($magangLama['nik'] == $this->request->getVar('nik')) {
             $rule_nik = 'required';
@@ -144,6 +141,7 @@ class Magang extends BaseController
         if (!$this->validate([
             'nama' => 'required',
             'nik' => $rule_nik,
+            'dinas' => 'required',
             'gambar' => 'max_size[gambar,1024]|is_image[gambar]|mime_in[gambar,image/jpg,image/jpeg,image/png]'
         ], [
             'nama' => [
@@ -187,6 +185,7 @@ class Magang extends BaseController
             'alamat' => $this->request->getVar('alamat'),
             'notp' => $this->request->getVar('notp'),
             'agama' => $this->request->getVar('agama'),
+            'dinas' => $this->request->getVar('dinas'),
             'jurusan' => $this->request->getVar('jurusan')
         ]);
         session()->setFlashdata('pesan', 'Data berhasil diubah.');

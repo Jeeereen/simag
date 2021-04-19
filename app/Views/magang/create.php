@@ -6,6 +6,28 @@
         <div class="col-8">
             <form action="/magang/save" method="post" class="mt-5" enctype="multipart/form-data">
                 <?= csrf_field(); ?>
+                <?php if (in_groups('user')) : ?>
+                    <fieldset disabled>
+                        <div class="row mb-3">
+                            <label for="hidden" class="col-sm-2 col-form-label">Bagian</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="hidden" value="<?= user()->fullname; ?>" name="hidden">
+
+                            </div>
+                        </div>
+                    </fieldset>
+                    <input type="hidden" name="dinas" value="<?= user()->fullname; ?>">
+                <?php else :  ?>
+                    <div class="row mb-3">
+                        <label class="input-group-text" for="dinas">Daftar Nama Dinas <i class="bi bi-arrow-right ml-2"></i></label>
+                        <select class="form-select" id="dinas" name="dinas">
+                            <option selected>Pilih Dinas...</option>
+                            <?php foreach ($dinas as $d) : ?>
+                                <option value="<?= $d->fullname; ?>"><?= $d->fullname; ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                <?php endif; ?>
                 <div class="row mb-3">
                     <label for="nama" class="col-sm-2 col-form-label">Nama</label>
                     <div class="col-sm-10">
