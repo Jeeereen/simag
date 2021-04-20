@@ -20,6 +20,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
     <!-- Menghubungkan Dengan CSS Pribadi -->
     <link rel="stylesheet" href="<?= base_url() ?>/template/dist/css/style.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>/css/style.css">
 
 </head>
 

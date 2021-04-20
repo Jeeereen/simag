@@ -29,7 +29,7 @@
                             <th scope="row"><?= $i++; ?></th>
                             <td><?= $d->username; ?></td>
                             <td><?= $d->fullname; ?></td>
-                            <td><img src="/img/dinas/<?= $d->user_image; ?>" class="logo" alt=""></td>
+                            <td><img src="<?= base_url(); ?>/img/<?= $d->user_image; ?>" class="gambar" alt=""></td>
                             <td><a href="" class="btn btn-info">Detail</a></td>
                         </tr>
                     <?php endforeach; ?>

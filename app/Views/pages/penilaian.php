@@ -9,8 +9,8 @@
                     <label for="" class="col-sm-4 col-form-label">Periode Magang</label>
                     <div class="col-sm-8">
                         <div class="input-group">
-                            <input type="date" class="form-control">
-                            <input type="date" class="form-control">
+                            <input type="date" class="form-control" name="magangmasuk">
+                            <input type="date" class="form-control" name="magangkeluar">
                         </div>
                         <div class=" container">
                             <div class="row">
@@ -43,7 +43,7 @@
                             <div class="row">
                                 <div class="col-10">
                                     <div class="form-group">
-                                        <input type="range" class="custom-range" min="0" max="10" value="5" id="range1" oninput="nilai1(value)">
+                                        <input type="range" class="custom-range" min="0" max="10" value="5" id="range1" oninput="nilai1(value)" name="kerajinan">
                                     </div>
                                 </div>
                                 <div class="col-2">
@@ -60,7 +60,7 @@
                             <div class="row">
                                 <div class="col-10">
                                     <div class="form-group">
-                                        <input type="range" class="custom-range" min="0" max="10" value="5" id="range2" oninput="nilai2(value)">
+                                        <input type="range" class="custom-range" min="0" max="10" value="5" id="range2" oninput="nilai2(value)" name="dayatangkap">
                                     </div>
                                 </div>
                                 <div class="col-2">
@@ -77,7 +77,7 @@
                             <div class="row">
                                 <div class="col-10">
                                     <div class="form-group">
-                                        <input type="range" class="custom-range" min="0" max="10" value="5" id="range3" oninput="nilai3(value)">
+                                        <input type="range" class="custom-range" min="0" max="10" value="5" id="range3" oninput="nilai3(value)" name="kemampuan">
                                     </div>
                                 </div>
                                 <div class="col-2">
@@ -94,7 +94,7 @@
                             <div class="row">
                                 <div class="col-10">
                                     <div class="form-group">
-                                        <input type="range" class="custom-range" min="0" max="10" value="5" id="range4" oninput="nilai4(value)">
+                                        <input type="range" class="custom-range" min="0" max="10" value="5" id="range4" oninput="nilai4(value)" name="tanggungjawab">
                                     </div>
                                 </div>
                                 <div class="col-2">
@@ -111,7 +111,7 @@
                             <div class="row">
                                 <div class="col-10">
                                     <div class="form-group">
-                                        <input type="range" class="custom-range" min="0" max="10" value="5" id="range5" oninput="nilai5(value)">
+                                        <input type="range" class="custom-range" min="0" max="10" value="5" id="range5" oninput="nilai5(value)" name="hubungan">
                                     </div>
                                 </div>
                                 <div class="col-2">
@@ -128,7 +128,7 @@
                             <div class="row">
                                 <div class="col-10">
                                     <div class="form-group">
-                                        <input type="range" class="custom-range" min="0" max="10" value="5" id="range6" oninput="nilai6(value)">
+                                        <input type="range" class="custom-range" min="0" max="10" value="5" id="range6" oninput="nilai6(value)" name="akhlak">
                                     </div>
                                 </div>
                                 <div class="col-2">
@@ -145,7 +145,7 @@
                             <div class="row">
                                 <div class="col-10">
                                     <div class="form-group">
-                                        <input type="range" class="custom-range" min="0" max="10" value="5" id="range7" oninput="nilai7(value)">
+                                        <input type="range" class="custom-range" min="0" max="10" value="5" id="range7" oninput="nilai7(value)" name="percayadiri">
                                     </div>
                                 </div>
                                 <div class="col-2">
@@ -162,7 +162,7 @@
                             <div class="row">
                                 <div class="col-10">
                                     <div class="form-group">
-                                        <input type="range" class="custom-range" min="0" max="10" value="5" id="range8" oninput="nilai8(value)">
+                                        <input type="range" class="custom-range" min="0" max="10" value="5" id="range8" oninput="nilai8(value)" name="keterampilan">
                                     </div>
                                 </div>
                                 <div class="col-2">
@@ -179,7 +179,7 @@
                             <div class="row">
                                 <div class="col-10">
                                     <div class="form-group">
-                                        <input type="range" class="custom-range" min="0" max="10" value="5" id="range9" oninput="nilai9(value)">
+                                        <input type="range" class="custom-range" min="0" max="10" value="5" id="range9" oninput="nilai9(value)" name="keselamatan">
                                     </div>
                                 </div>
                                 <div class="col-2">
@@ -196,7 +196,7 @@
                             <div class="row">
                                 <div class="col-10">
                                     <div class="form-group">
-                                        <input type="range" class="custom-range" min="0" max="10" value="5" id="range10" oninput="nilai10(value)">
+                                        <input type="range" class="custom-range" min="0" max="10" value="5" id="range10" oninput="nilai10(value)" name="keputusan">
                                     </div>
                                 </div>
                                 <div class="col-2">
@@ -213,7 +213,7 @@
                             <div class="row">
                                 <div class="col-10">
                                     <div class="form-group">
-                                        <input type="range" class="custom-range" min="0" max="10" value="5" id="range11" oninput="nilai11(value)">
+                                        <input type="range" class="custom-range" min="0" max="10" value="5" id="range11" oninput="nilai11(value)" name="keseluruhan">
                                     </div>
                                 </div>
                                 <div class="col-2">
