@@ -5,6 +5,20 @@
     <div class="row">
         <div class="col">
             <div class="card mb-3" style="max-width: auto;">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="/magang/<?= $magang['magang_id']; ?>">Detail</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/nilai/hasil/<?= $magang['magang_id']; ?>">Hasil Penilaian</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
                 <div class="row g-0">
                     <div class="col-md-4">
                         <img src="/img/<?= $magang['gambar']; ?>" alt=" ..." class="card-img m-2">
@@ -12,8 +26,12 @@
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title mb-2"><?= $magang['nama']; ?></h5>
+                            <p class="card-text"><b>Periode Magang</b> : <?= $magang['magangmasuk']; ?> s/d <?= $magang['magangkeluar']; ?></p>
                             <p class="card-text"><b>Dinas</b> : <?= $magang['dinas']; ?></p>
                             <p class="card-text"><b>NIK</b> : <?= $magang['nik']; ?></p>
+                            <?php if ($institut['jenispendidikan'] == true) : ?>
+                                <p class="card-text"><b><?= ($institut['jenispendidikan'] == 'Sekolah') ? 'Sekolah' : 'Universitas'; ?></b> : <?= $institut['nama']; ?></p>
+                            <?php endif; ?>
                             <p class="card-text"><b>Jurusan</b> : <?= $magang['jurusan']; ?></p>
                             <p class="card-text"><b>Email</b> : <?= $magang['email']; ?></p>
                             <p class="card-text"><b>Tanggal Lahir</b> : <?= $magang['ttl']; ?></p>

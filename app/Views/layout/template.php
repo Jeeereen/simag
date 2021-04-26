@@ -75,48 +75,48 @@ scratch. This page gets rid of all links and provides the needed markup only.
             }
         }
 
-        function nilai1(range1) {
-            document.querySelector('#nilai1').value = range1;
+        function nilai1(value) {
+            document.querySelector('#nilai1').value = value;
         }
 
-        function nilai2(range1) {
-            document.querySelector('#nilai2').value = range1;
+        function nilai2(value) {
+            document.querySelector('#nilai2').value = value;
         }
 
-        function nilai3(range1) {
-            document.querySelector('#nilai3').value = range1;
+        function nilai3(value) {
+            document.querySelector('#nilai3').value = value;
         }
 
-        function nilai4(range1) {
-            document.querySelector('#nilai4').value = range1;
+        function nilai4(value) {
+            document.querySelector('#nilai4').value = value;
         }
 
-        function nilai5(range1) {
-            document.querySelector('#nilai5').value = range1;
+        function nilai5(value) {
+            document.querySelector('#nilai5').value = value;
         }
 
-        function nilai6(range1) {
-            document.querySelector('#nilai6').value = range1;
+        function nilai6(value) {
+            document.querySelector('#nilai6').value = value;
         }
 
-        function nilai7(range1) {
-            document.querySelector('#nilai7').value = range1;
+        function nilai7(value) {
+            document.querySelector('#nilai7').value = value;
         }
 
-        function nilai8(range1) {
-            document.querySelector('#nilai8').value = range1;
+        function nilai8(value) {
+            document.querySelector('#nilai8').value = value;
         }
 
-        function nilai9(range1) {
-            document.querySelector('#nilai9').value = range1;
+        function nilai9(value) {
+            document.querySelector('#nilai9').value = value;
         }
 
-        function nilai10(range1) {
-            document.querySelector('#nilai10').value = range1;
+        function nilai10(value) {
+            document.querySelector('#nilai10').value = value;
         }
 
-        function nilai11(range1) {
-            document.querySelector('#nilai11').value = range1;
+        function nilai11(value) {
+            document.querySelector('#nilai11').value = value;
         }
     </script>
 </body>

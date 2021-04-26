@@ -36,6 +36,8 @@ $routes->get('/magang/create', 'Magang::create');
 $routes->get('/magang/edit/(:segment)', 'Magang::edit/$1');
 $routes->delete('/magang/(:num)', 'Magang::delete/$1');
 $routes->get('/magang/(:any)', 'Magang::detail/$1');
+$routes->delete('/institut/(:num)', 'Institut::delete/$1');
+// $routes->get
 
 /*
  * --------------------------------------------------------------------

@@ -11,7 +11,7 @@
                         <div class="row mb-3">
                             <label for="hidden" class="col-sm-2 col-form-label">Bagian</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="hidden" value="<?= user()->fullname; ?>" name="hidden">
+                                <input type="text" class="form-control " id="hidden" value="<?= user()->fullname; ?>" name="hidden">
 
                             </div>
                         </div>
@@ -20,14 +20,34 @@
                 <?php else :  ?>
                     <div class="row mb-3">
                         <label class="input-group-text" for="dinas">Daftar Nama Dinas <i class="bi bi-arrow-right ml-2"></i></label>
-                        <select class="form-select" id="dinas" name="dinas">
+                        <select class="form-select <?= ($validation->hasError('dinas')) ? 'is-invalid' : ''; ?>" id="dinas" name="dinas">
                             <option selected>Pilih Dinas...</option>
                             <?php foreach ($dinas as $d) : ?>
                                 <option value="<?= $d->fullname; ?>"><?= $d->fullname; ?></option>
                             <?php endforeach; ?>
                         </select>
+                        <div class="invalid-feedback">
+                            <?= $validation->getError('dinas'); ?>
+                        </div>
                     </div>
                 <?php endif; ?>
+                <div class="mb-3 row">
+                    <label for="" class="col-sm-4 col-form-label">Periode Magang</label>
+                    <div class="col-sm-8">
+                        <div class="input-group">
+                            <small class="text-muted">Dari..</small>
+                            <input type="date" class="form-control <?= ($validation->hasError('magangmasuk')) ? 'is-invalid' : ''; ?>" name="magangmasuk">
+                            <div class="invalid-feedback">
+                                <?= $validation->getError('magangmasuk'); ?>
+                            </div>
+                            <small class="text-muted">Hingga..</small>
+                            <input type="date" class="form-control <?= ($validation->hasError('magangkeluar')) ? 'is-invalid' : ''; ?>" name="magangkeluar">
+                            <div class="invalid-feedback">
+                                <?= $validation->getError('magangkeluar'); ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="row mb-3">
                     <label for="nama" class="col-sm-2 col-form-label">Nama</label>
                     <div class="col-sm-10">
@@ -116,6 +136,23 @@
                                 <option value="Buddha">Buddha</option>
                                 <option value="Khonghucu">Khonghucu</option>
                             </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="institut_id" class="col-sm-2 col-form-label">Pendidikan</label>
+                    <div class="col-sm-10">
+                        <div class="input-group mb-3">
+                            <label class="input-group-text" for="institut_id">Daftar Nama Sekolah/Universitas <i class="bi bi-arrow-right ml-2"></i></label>
+                            <select class="form-select  <?= ($validation->hasError('institut_id')) ? 'is-invalid' : ''; ?>" id="institut_id" name="institut_id">
+                                <option value="<?= (old('institut_id')) ? old('institut_id') : '0'; ?>" selected><?= (old('nama')) ? old('nama') : 'Pilih Sekolah/Universitas...'; ?></option><small></small>
+                                <?php foreach ($institut as $i) : ?>
+                                    <option value="<?= $i['institut_id']; ?>"><?= $i['nama ']; ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                            <div class="invalid-feedback">
+                                <?= $validation->getError('institut_id'); ?>
+                            </div>
                         </div>
                     </div>
                 </div>

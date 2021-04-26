@@ -123,11 +123,30 @@
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon bi bi-gear"></i>
-                            <p>
-                                Pengaturan
+                            <i class="nav-icon bi bi-book"></i>
+                            <p class="css-color">
+                                Sekolah/Universitas
+                                <i class="fas fa-angle-left right"></i>
                             </p>
                         </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/institut/sekolah" class="nav-link">
+                                    <i class="nav-icon bi bi-file-earmark-plus"></i>
+                                    <p class="css-color">
+                                        Tambah Sekolah
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/institut/universitas" class="nav-link">
+                                    <i class="nav-icon bi bi-file-earmark-plus"></i>
+                                    <p class="css-color">
+                                        Tambah Universitas
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </nav>
