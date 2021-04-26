@@ -147,7 +147,7 @@
                             <select class="form-select  <?= ($validation->hasError('institut_id')) ? 'is-invalid' : ''; ?>" id="institut_id" name="institut_id">
                                 <option value="<?= (old('institut_id')) ? old('institut_id') : '0'; ?>" selected><?= (old('nama')) ? old('nama') : 'Pilih Sekolah/Universitas...'; ?></option><small></small>
                                 <?php foreach ($institut as $i) : ?>
-                                    <option value="<?= $i['institut_id']; ?>"><?= $i['nama ']; ?></option>
+                                    <option value="<?= $i['institut_id']; ?>"><?= $i['nama']; ?></option>
                                 <?php endforeach; ?>
                             </select>
                             <div class="invalid-feedback">

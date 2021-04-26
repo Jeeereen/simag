@@ -4,10 +4,10 @@
 <div class="container">
     <div class="col-6 ">
         <form action="" method="post">
-            <!-- <div class="input-group mb-3">
+            <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Masukkan pencarian" name="keyword">
                 <button class="btn btn-outline-secondary" type="submit" name="submit">Cari</button>
-            </div> -->
+            </div>
         </form>
     </div>
     <div class="row">
@@ -23,7 +23,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php $i = 1; ?>
+                    <?php $i = 1 + (6 * ($currentPage - 1)); ?>
                     <?php foreach ($dinas as $d) : ?>
                         <tr>
                             <th scope="row"><?= $i++; ?></th>
@@ -35,6 +35,7 @@
                     <?php endforeach; ?>
                 </tbody>
             </table>
+            <?= $pager->links('users', 'dinas_pagination'); ?>
         </div>
     </div>
 </div>
