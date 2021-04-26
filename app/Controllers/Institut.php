@@ -16,6 +16,7 @@ class Institut extends BaseController
     {
         $data = [
             'title' => 'Form Tambah Sekolah',
+            'validation' => \Config\Services::validation(),
             'institut' => $this->institutModel->findAll()
         ];
         return view('institut/sekolah', $data);
@@ -24,6 +25,7 @@ class Institut extends BaseController
     {
         $data = [
             'title' => 'Form Tambah Universitas',
+            'validation' => \Config\Services::validation(),
             'institut' => $this->institutModel->findAll()
         ];
         return view('institut/universitas', $data);
@@ -32,6 +34,18 @@ class Institut extends BaseController
     public function save()
     {
         $jenis = $this->request->getVar('jenispendidikan');
+        if (!$this->validate([
+            'nama' => 'required'
+        ], [
+            'nama' => [
+                'required', 'Nama tidak boleh kosong'
+            ]
+        ])) {
+            if ($jenis == 'Sekolah') {
+                return redirect()->to('/institut/sekolah')->withInput();
+            }
+            return redirect()->to('/institut/universitas')->withInput();
+        }
         $this->institutModel->save([
             'nama' => $this->request->getVar('nama'),
             'jenispendidikan' => $jenis

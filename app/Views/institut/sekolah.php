@@ -9,7 +9,10 @@
                     <form action="/institut/save" method="post">
                         <div class="mb-3">
                             <label for="nama" class="form-label">Nama Sekolah</label>
-                            <input type="text" class="form-control" id="nama" name="nama">
+                            <input type="text" class="form-control <?= ($validation->hasError('nama')) ? 'is-invalid' : ''; ?>" id="nama" name="nama">
+                            <div class="invalid-feedback">
+                                <?= $validation->getError('nama'); ?>
+                            </div>
                         </div>
                         <input type="hidden" class="form-control" id="jenispendidikan" name="jenispendidikan" value="Sekolah">
                         <button type="submit" class="btn btn-primary">Submit</button>
