@@ -12,7 +12,7 @@
     </div>
     <div class="row">
         <div class="col">
-            <a href="/magang/create" class="btn btn-primary m-3">Tambah Data Magang</a>
+            <a href="/magang/create" class="btn m-3 "><i class="bi bi-person-plus"></i></a>
             <?php if (session()->getFlashdata('pesan')) : ?>
                 <div class="alert alert-info" role="alert">
                     <?= session()->getFlashdata('pesan'); ?>

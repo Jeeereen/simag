@@ -40,12 +40,12 @@
                             <p class="card-text"><b>Nomor Telepon</b> : <?= $magang['notp']; ?></p>
                             <p class="card-text"><b>Agama</b> : <?= $magang['agama']; ?></p>
 
-                            <a href="/magang/edit/<?= $magang['magang_id']; ?>" class="btn btn-warning">Edit</a>
+                            <a href="/magang/edit/<?= $magang['magang_id']; ?>" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
 
                             <form action="/magang/<?= $magang['magang_id']; ?>" method="POST" class="d-inline">
                                 <?= csrf_field(); ?>
                                 <input type="hidden" name="_method" value="DELETE">
-                                <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda ingin menghapus data <?= $magang['nama']; ?>')">Delete</button>
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda ingin menghapus data <?= $magang['nama']; ?>')"><i class="bi bi-trash-fill"></i></button>
                             </form>
 
                             <br><br>

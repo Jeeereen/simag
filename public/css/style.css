@@ -29,6 +29,7 @@ a.d-block {
   font-weight: bolder;
   font-size: 1.5rem;
 }
+
 p.css-color {
   color: black;
   font-weight: bolder;
@@ -41,7 +42,8 @@ p.css-color {
 }
 
 img.img2-svg {
-  width: 500px;
+  width: 100%;
+  margin: 2rem 0 0 0;
 }
 
 .img {
@@ -59,9 +61,10 @@ img.lambang-gowa {
   margin: 2rem;
 }
 
-/* form {
-  width: 350px;
-} */
+form {
+  width: auto;
+  margin: 2rem 0 0 0;
+}
 
 ::placeholder {
   color: #333;
@@ -73,6 +76,7 @@ form h2 {
   margin: 15px 0;
   color: #403e56;
 }
+
 span.brand-text.font-weight-light {
   color: black;
   text-transform: uppercase;
@@ -143,12 +147,12 @@ span.brand-text.font-weight-light {
   transition: 0.3s;
 }
 
-.input-div > div {
+.input-div>div {
   position: relative;
   height: 45px;
 }
 
-.input-div > div h5 {
+.input-div>div h5 {
   position: absolute;
   left: 10px;
   top: 50%;
@@ -169,7 +173,7 @@ span.brand-text.font-weight-light {
   outline: none;
   padding: 0.5rem 0.7rem;
   font-size: 1.2rem;
-  font-family: "poppins" sans-serif;
+  font-family: "poppins"sans-serif;
 }
 
 .btn-login {
@@ -219,7 +223,7 @@ span.brand-text.font-weight-light {
 
   .navbar-brand {
     color: #403e56;
-    font-size: 100%;
+    font-size: 90%;
   }
 
   img.lambang-gowa {
@@ -236,17 +240,34 @@ span.brand-text.font-weight-light {
 }
 
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 991.98px) {
+@media (min-width: 768px) and (max-width:1199.98px) {
+  img.img2-svg {
+    display: none;
+  }
+
+  form {
+    margin: 10rem 0;
+  }
+
+  .input-div.one {
+    margin-bottom: 4rem;
+  }
+
+  img.lambang-gowa {
+    width: 150px;
+  }
+
+  form h2 {
+    font-size: 2.5rem;
+  }
+
 }
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-}
+@media (min-width: 992px) {}
 
 /* X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-}
+@media (min-width: 1200px) {}
 
 /* XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {
-}
+@media (min-width: 1400px) {}

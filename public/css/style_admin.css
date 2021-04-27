@@ -1,0 +1,53 @@
+* {
+  color: black;
+}
+
+aside.main-sidebar.elevation-4 {
+  background-image: linear-gradient(to right, #227509, #119e18, #4bc24b);
+  font-family: "Playfair Display", serif;
+}
+
+a.brand-link {
+  font-size: 2.3rem;
+  text-align: center;
+}
+
+span.brand-text.font-weight-light {
+  padding: 5rem 0 0 0;
+}
+
+a.d-block {
+  font-size: 1.3rem;
+  color: black;
+}
+
+.user-panel.mt-3.mb-3.d-flex {
+  padding: 1.9rem 0;
+}
+
+.content-wrapper {
+  height: 100%;
+  background-color: rgb(228, 248, 226);
+}
+
+button.btn.btn-outline-secondary {
+  background: rgb(10, 180, 81);
+  border: none;
+  color: black;
+}
+
+button.btn.btn-outline-secondary:hover {
+  font-size: 20px;
+}
+
+a.btn.m-3 {
+  background: rgb(10, 180, 81);
+}
+
+nav.main-header.navbar.navbar-expand {
+  background: rgb(115, 187, 119);
+}
+
+footer.main-footer.text-center {
+  background: rgb(115, 187, 119);
+}

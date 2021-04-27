@@ -33,4 +33,12 @@ class Dinas extends BaseController
         ];
         return view('dinas/index', $data);
     }
+    public function detail()
+    {
+
+        $data = [
+            'title' => 'Detail Dinas',
+        ];
+        return view('dinas/index', $data);
+    }
 }
