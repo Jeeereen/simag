@@ -7,8 +7,8 @@ use CodeIgniter\Model;
 class InstitutModel extends Model
 {
     protected $table = 'institut';
-    protected $primaryKey = "institut_id";
-    protected $allowedFields = ['nama', 'jenispendidikan'];
+    protected $primaryKey = "id";
+    protected $allowedFields = ['nama', 'jenispendidikan', 'alamat', 'kontak'];
 
     public function getInstitut($institut_id = false)
     {

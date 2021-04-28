@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\MagangModel;
 use App\Models\InstitutModel;
+use App\Models\NilaiModel;
 use CodeIgniter\Config\Config;
 use CodeIgniter\HTTP\Request;
 
@@ -11,10 +12,12 @@ class Magang extends BaseController
 {
     protected $magangModel;
     protected $institutModel;
+    protected $nilaiModel;
     public function __construct()
     {
         $this->magangModel = new MagangModel();
         $this->institutModel = new InstitutModel();
+        $this->nilaiModel = new NilaiModel();
     }
 
     public function index()
@@ -67,7 +70,6 @@ class Magang extends BaseController
             'dinas' => 'required',
             'magangmasuk' => 'required',
             'magangkeluar' => 'required',
-            'institut_id' => 'is_natural_no_zero',
             'gambar' => 'max_size[gambar,1024]|is_image[gambar]|mime_in[gambar,image/jpg,image/jpeg,image/png]'
         ], [
             'nama' => [
@@ -90,9 +92,6 @@ class Magang extends BaseController
             ],
             'magangkeluar' => [
                 'required' => 'Masukkan tanggal keluar yang benar'
-            ],
-            'insitut_id' => [
-                'is_natural_no_zero' => 'Pilih Sekolah/Universitas terlebih dahulu'
             ]
         ])) {
             // $validation = \Config\Services::validation();
@@ -122,7 +121,7 @@ class Magang extends BaseController
             'notp' => $this->request->getVar('notp'),
             'agama' => $this->request->getVar('agama'),
             'dinas' => $this->request->getVar('dinas'),
-            'institut_id' => $this->request->getVar('institut_id'),
+            'institut_id' => $this->request->getVar('id'),
             'jurusan' => $this->request->getVar('jurusan')
         ]);
         session()->setFlashdata('pesan', 'Data berhasil ditambahkan.');
@@ -132,12 +131,13 @@ class Magang extends BaseController
     public function delete($magang_id)
     {
         $magang = $this->magangModel->find($magang_id);
+        $nilai = $this->nilaiModel->getMagang($magang_id);
 
         if ($magang['gambar'] != 'default.jpg') {
 
             unlink('img/' . $magang['gambar']);
         }
-
+        $this->nilaiModel->delete($nilai['nilai_id']);
         $this->magangModel->delete($magang_id);
         session()->setFlashdata('pesan', 'Data berhasil dihapus.');
         return redirect()->to('/magang');

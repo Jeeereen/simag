@@ -48,6 +48,8 @@ class Institut extends BaseController
         }
         $this->institutModel->save([
             'nama' => $this->request->getVar('nama'),
+            'alamat' => $this->request->getVar('alamat'),
+            'kontak' => $this->request->getVar('kontak'),
             'jenispendidikan' => $jenis
         ]);
         if ($jenis == 'Sekolah') {
@@ -61,6 +63,45 @@ class Institut extends BaseController
         $jenis = $this->request->getVar('jenispendidikan');
         $this->institutModel->delete($institut_id);
 
+        if ($jenis == 'Sekolah') {
+            return redirect()->to('/institut/sekolah');
+        }
+        return redirect()->to('/institut/universitas');
+    }
+
+    public function ubah($id)
+    {
+        $data = [
+            'title' => 'Form Ubah ',
+            'validation' => \Config\Services::validation(),
+            'institut' => $this->institutModel->findAll(),
+            'institutedit' => $this->institutModel->getInstitut($id)
+        ];
+        return view('institut/ubah', $data);
+    }
+
+    public function update($id)
+    {
+        $jenis = $this->request->getVar('jenispendidikan');
+        if (!$this->validate([
+            'nama' => 'required'
+        ], [
+            'nama' => [
+                'required', 'Nama tidak boleh kosong'
+            ]
+        ])) {
+            if ($jenis == 'Sekolah') {
+                return redirect()->to('/institut/sekolah')->withInput();
+            }
+            return redirect()->to('/institut/universitas')->withInput();
+        }
+        $this->institutModel->save([
+            'id' => $id,
+            'nama' => $this->request->getVar('nama'),
+            'alamat' => $this->request->getVar('alamat'),
+            'kontak' => $this->request->getVar('kontak'),
+            'jenispendidikan' => $jenis
+        ]);
         if ($jenis == 'Sekolah') {
             return redirect()->to('/institut/sekolah');
         }

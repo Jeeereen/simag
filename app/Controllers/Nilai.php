@@ -44,6 +44,11 @@ class Nilai extends BaseController
             'keputusan' => $this->request->getVar('keputusan'),
             'keseluruhan' => $this->request->getVar('keseluruhan')
         ]);
+        $nilai = $this->nilaiModel->get()->getLastRow('array');
+        $this->magangModel->save([
+            'magang_id' => $magang_id,
+            'nilai' => $nilai['nilai_id']
+        ]);
         return redirect()->to('/nilai/hasil/' . $magang_id);
     }
 

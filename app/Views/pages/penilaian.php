@@ -10,12 +10,14 @@
                     <select class="form-select" id="magang_id" name="magang_id">
                         <option value="" selected>Pilih Nama Magang ...</option>
                         <?php foreach ($magang as $m) : ?>
-                            <?php if (in_groups('user')) : ?>
-                                <?php if (user()->fullname == $m['dinas']) : ?>
+                            <?php if ($m['nilai'] == false) : ?>
+                                <?php if (in_groups('user')) : ?>
+                                    <?php if (user()->fullname == $m['dinas']) : ?>
+                                        <option value="<?= $m['magang_id']; ?>"><?= $m['nama']; ?></option>
+                                    <?php endif; ?>
+                                <?php elseif (in_groups('superadmin')) : ?>
                                     <option value="<?= $m['magang_id']; ?>"><?= $m['nama']; ?></option>
                                 <?php endif; ?>
-                            <?php elseif (in_groups('superadmin')) : ?>
-                                <option value="<?= $m['magang_id']; ?>"><?= $m['nama']; ?></option>
                             <?php endif; ?>
                         <?php endforeach; ?>
                     </select>

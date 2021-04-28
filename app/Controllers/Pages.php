@@ -69,10 +69,15 @@ class Pages extends BaseController
 
     public function penilaian()
     {
-
+        $db      = \Config\Database::connect();
+        $builder = $db->table('magang');
+        $builder->select('*');
+        $builder->join('nilai', 'nilai.nilai_id = magang.nilai');
+        // dd($builder->get()->getResultObject());
         $data = [
             'title' => ' Penilaian Magang',
-            'magang' => $this->magangModel->getMagang()
+            'magang' => $this->magangModel->getMagang(),
+            'nilai' => $this->nilaiModel->getNilai()
         ];
         return view('pages/penilaian', $data);
     }

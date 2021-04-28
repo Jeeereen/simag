@@ -52,7 +52,7 @@
         <div class="col-lg-6">
             <div class="card-body">
                 <p class="text-center">
-                    <strong>Universitas Favorit</strong>
+                    <strong>Daftar Universitas</strong>
                 </p>
 
                 <div class="progress-group">
@@ -155,7 +155,7 @@
             labels: ['Magang Laki-laki', 'Magang Perempuan'],
             datasets: [{
                 label: 'Magang',
-                data: [<?= $bulanini; ?>, <?= $lakilaki; ?>, ],
+                data: [<?= $lakilaki; ?>, <?= $perempuan; ?>],
                 backgroundColor: [
                     'rgba(153, 102, 255, 0.2)',
                     'rgba(255, 159, 64, 0.2)'
