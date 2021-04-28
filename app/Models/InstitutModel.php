@@ -15,6 +15,6 @@ class InstitutModel extends Model
         if ($institut_id == false) {
             return $this->findAll();
         }
-        return $this->where(['institut_id' => $institut_id])->first();
+        return $this->where(['id' => $institut_id])->first();
     }
 }

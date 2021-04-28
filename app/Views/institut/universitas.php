@@ -25,29 +25,33 @@
         <div class="col-8">
             <div class="card">
                 <div class="card-body">
-                    <table class="table table-striped">
-                        <tr>
-                            <th></th>
-                            <th>Nama Universitas</th>
-                            <th>Aksi</th>
-                        </tr>
-                        <?php $a = 1; ?>
-                        <?php foreach ($institut as $i) : ?>
-                            <?php if ($i['jenispendidikan'] == 'Universitas') : ?>
-                                <tr>
-                                    <th><?= $a++; ?></th>
-                                    <td><?= $i['nama']; ?></td>
-                                    <td>
-                                        <form action="/institut/<?= $i['institut_id']; ?>" method="POST" class="d-inline">
-                                            <?= csrf_field(); ?>
-                                            <input type="hidden" name="_method" value="DELETE">
-                                            <input type="hidden" value="Universitas" name="jenispendidikan">
-                                            <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda ingin menghapus data <?= $i['nama']; ?>')">Delete</button>
-                                        </form>
-                                    </td>
-                                </tr>
-                            <?php endif; ?>
-                        <?php endforeach; ?>
+                    <table class="table table-striped" id="dtBasicExample">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Nama Universitas</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php $a = 1; ?>
+                            <?php foreach ($institut as $i) : ?>
+                                <?php if ($i['jenispendidikan'] == 'Universitas') : ?>
+                                    <tr>
+                                        <th><?= $a++; ?></th>
+                                        <td><?= $i['nama']; ?></td>
+                                        <td>
+                                            <form action="/institut/<?= $i['id']; ?>" method="POST" class="d-inline">
+                                                <?= csrf_field(); ?>
+                                                <input type="hidden" name="_method" value="DELETE">
+                                                <input type="hidden" value="Universitas" name="jenispendidikan">
+                                                <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda ingin menghapus data <?= $i['nama']; ?>')">Delete</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </tbody>
                     </table>
                 </div>
             </div>

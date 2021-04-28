@@ -140,18 +140,18 @@
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label for="institut_id" class="col-sm-2 col-form-label">Pendidikan</label>
+                    <label for="id" class="col-sm-2 col-form-label">Pendidikan</label>
                     <div class="col-sm-10">
                         <div class="input-group mb-3">
-                            <label class="input-group-text" for="institut_id">Daftar Nama Sekolah/Universitas <i class="bi bi-arrow-right ml-2"></i></label>
-                            <select class="form-select  <?= ($validation->hasError('institut_id')) ? 'is-invalid' : ''; ?>" id="institut_id" name="institut_id">
-                                <option value="<?= (old('institut_id')) ? old('institut_id') : '0'; ?>" selected><?= (old('nama')) ? old('nama') : 'Pilih Sekolah/Universitas...'; ?></option><small></small>
+                            <label class="input-group-text" for="id">Daftar Nama Sekolah/Universitas <i class="bi bi-arrow-right ml-2"></i></label>
+                            <select class="form-select  <?= ($validation->hasError('id')) ? 'is-invalid' : ''; ?>" id="id" name="id">
+                                <option value="<?= (old('id')) ? old('id') : '0'; ?>" selected><?= (old('nama')) ? old('nama') : 'Pilih Sekolah/Universitas...'; ?></option><small></small>
                                 <?php foreach ($institut as $i) : ?>
-                                    <option value="<?= $i['institut_id']; ?>"><?= $i['nama']; ?></option>
+                                    <option value="<?= $i['id']; ?>"><?= $i['nama']; ?></option>
                                 <?php endforeach; ?>
                             </select>
                             <div class="invalid-feedback">
-                                <?= $validation->getError('institut_id'); ?>
+                                <?= $validation->getError('id'); ?>
                             </div>
                         </div>
                     </div>

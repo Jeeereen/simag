@@ -3,11 +3,11 @@
 }
 
 aside.main-sidebar.elevation-4 {
-  background-image: linear-gradient(to right, #227509, #119e18, #4bc24b);
   font-family: "Playfair Display", serif;
 }
 
 a.brand-link {
+  background: rgb(115, 187, 119);
   font-size: 2.3rem;
   text-align: center;
 }
@@ -27,7 +27,7 @@ a.d-block {
 
 .content-wrapper {
   height: 100%;
-  background-color: rgb(228, 248, 226);
+  background-color: rgb(240, 252, 237);
 }
 
 button.btn.btn-outline-secondary {

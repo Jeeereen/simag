@@ -30,7 +30,7 @@
                             <p class="card-text"><b>Dinas</b> : <?= $magang['dinas']; ?></p>
                             <p class="card-text"><b>NIK</b> : <?= $magang['nik']; ?></p>
                             <?php if ($institut['jenispendidikan'] == true) : ?>
-                                <p class="card-text"><b><?= ($institut['jenispendidikan'] == 'Sekolah') ? 'Sekolah' : 'Universitas'; ?></b> : <?= $institut['nama']; ?></p>
+                                <p class="card-text"><b><?= ($institut['jenispendidikan'] == 'Universitas') ? 'Universitas' : 'Sekolah'; ?></b> : <?= $institut['nama']; ?></p>
                             <?php endif; ?>
                             <p class="card-text"><b>Jurusan</b> : <?= $magang['jurusan']; ?></p>
                             <p class="card-text"><b>Email</b> : <?= $magang['email']; ?></p>

@@ -1,15 +1,8 @@
 <?= $this->extend('layout/template'); ?>
 
 <?= $this->section('content'); ?>
+
 <div class="container">
-    <div class="col-6 ">
-        <form action="" method="post">
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Masukkan pencarian" name="keyword">
-                <button class="btn btn-outline-secondary" type="submit" name="submit">Cari</button>
-            </div>
-        </form>
-    </div>
     <div class="row">
         <div class="col">
             <a href="/magang/create" class="btn m-3 "><i class="bi bi-person-plus"></i></a>
@@ -18,34 +11,36 @@
                     <?= session()->getFlashdata('pesan'); ?>
                 </div>
             <?php endif; ?>
-            <table class="table table-striped">
+            <table class="table table-striped " id="dtBasicExample">
                 <thead>
                     <tr>
-                        <th scope="col"></th>
-                        <th scope="col">NIK</th>
+                        <th scope="col" class="th-sm"></th>
+                        <th scope="col" class="th-sm">NIK</th>
                         <?php if (in_groups('superadmin')) : ?>
-                            <th scope="col">Dinas Bagian</th>
+                            <th scope="col" class="th-sm">Dinas Bagian</th>
+                        <?php elseif (in_groups('user')) : ?>
+                            <th scope="col" class="th-sm">Jurusan</th>
                         <?php endif; ?>
-                        <th scope="col">Nama</th>
+                        <th scope="col" class="th-sm">Nama</th>
                         <th scope="col">Gambar</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
+                    <?php $i = 1; ?>
                     <?php foreach ($magang as $m) : ?>
                         <?php if (in_groups('user')) : ?>
-                            <?php $i = 1 + (6 * ($currentPage - 1)); ?>
                             <?php if ($m['dinas'] == user()->fullname) : ?>
                                 <tr>
                                     <th scope="row"><?= $i++; ?></th>
                                     <td><?= $m['nik']; ?></td>
+                                    <td><?= $m['jurusan']; ?></td>
                                     <td><?= $m['nama']; ?></td>
                                     <td><img src="/img/<?= $m['gambar']; ?>" class="gambar" alt=""></td>
                                     <td><a href="/magang/<?= $m['magang_id']; ?>" class="btn btn-info">Detail</a></td>
                                 </tr>
                             <?php endif; ?>
                         <?php else : ?>
-                            <?php $i = 1 + (6 * ($currentPage - 1)); ?>
                             <tr>
                                 <th scope="row"><?= $i++; ?></th>
                                 <td><?= $m['nik']; ?></td>
@@ -58,8 +53,8 @@
                     <?php endforeach; ?>
                 </tbody>
             </table>
-            <?= $pager->links('magang', 'magang_pagination'); ?>
         </div>
     </div>
 </div>
+
 <?= $this->endSection(); ?>

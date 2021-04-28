@@ -27,9 +27,7 @@ class Dinas extends BaseController
         }
         $data = [
             'title' => 'Daftar Dinas',
-            'dinas' => $dinas->paginate(6, 'users'),
-            'pager' => $this->dinasModel->pager,
-            'currentPage' => $currentPage
+            'dinas' => $this->dinasModel->findAll()
         ];
         return view('dinas/index', $data);
     }

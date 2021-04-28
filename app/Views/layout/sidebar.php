@@ -112,15 +112,15 @@
                                 </p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="/pages/penilaian" class="nav-link">
+                                <i class="nav-icon bi bi-file-earmark-bar-graph"></i>
+                                <p>
+                                    Penilaian Magang
+                                </p>
+                            </a>
+                        </li>
                     <?php endif; ?>
-                    <li class="nav-item">
-                        <a href="/pages/penilaian" class="nav-link">
-                            <i class="nav-icon bi bi-file-earmark-bar-graph"></i>
-                            <p>
-                                Penilaian Magang
-                            </p>
-                        </a>
-                    </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="nav-icon bi bi-book"></i>

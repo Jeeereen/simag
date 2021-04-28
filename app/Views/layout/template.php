@@ -25,8 +25,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Menghubungkan Dengan CSS Pribadi -->
     <link rel="stylesheet" href="<?= base_url() ?>/template/dist/css/style.css">
     <link rel="stylesheet" href="<?= base_url() ?>/css/style_admin.css">
+    <!-- MDBootstrap Datatables  -->
+    <link href="<?= base_url(); ?>/css/addons/datatables.min.css" rel="stylesheet">
     <!-- Chart.js  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/helpers.esm.min.js">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+
 
 </head>
 
@@ -60,7 +63,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="<?= base_url() ?>/template/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
     <script src="<?= base_url() ?>/template/dist/js/adminlte.min.js"></script>
+    <!-- MDBootstrap Datatables  -->
+    <script type="text/javascript" src="<?= base_url(); ?>/js/addons/datatables.min.js"></script>
     <script>
+        $(document).ready(function() {
+            $('#dtBasicExample').DataTable();
+            $('.dataTables_length').addClass('bs-select');
+        });
+
         function previewImg() {
 
             const gambar = document.querySelector('#gambar');
@@ -75,50 +85,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
             fileGambar.onload = function(e) {
                 imgPreview.src = e.target.result;
             }
-        }
-
-        function nilai1(value) {
-            document.querySelector('#nilai1').value = value;
-        }
-
-        function nilai2(value) {
-            document.querySelector('#nilai2').value = value;
-        }
-
-        function nilai3(value) {
-            document.querySelector('#nilai3').value = value;
-        }
-
-        function nilai4(value) {
-            document.querySelector('#nilai4').value = value;
-        }
-
-        function nilai5(value) {
-            document.querySelector('#nilai5').value = value;
-        }
-
-        function nilai6(value) {
-            document.querySelector('#nilai6').value = value;
-        }
-
-        function nilai7(value) {
-            document.querySelector('#nilai7').value = value;
-        }
-
-        function nilai8(value) {
-            document.querySelector('#nilai8').value = value;
-        }
-
-        function nilai9(value) {
-            document.querySelector('#nilai9').value = value;
-        }
-
-        function nilai10(value) {
-            document.querySelector('#nilai10').value = value;
-        }
-
-        function nilai11(value) {
-            document.querySelector('#nilai11').value = value;
         }
     </script>
 </body>
