@@ -50,47 +50,7 @@
             <canvas id="jenisPendidikan"></canvas>
         </div>
         <div class="col-lg-6">
-            <div class="card-body">
-                <p class="text-center">
-                    <strong>Daftar Universitas</strong>
-                </p>
-
-                <div class="progress-group">
-                    Add Products to Cart
-                    <span class="float-right"><b>160</b>/200</span>
-                    <div class="progress progress-sm">
-                        <div class="progress-bar bg-primary" style="width: 80%"></div>
-                    </div>
-                </div>
-                <!-- /.progress-group -->
-
-                <div class="progress-group">
-                    Complete Purchase
-                    <span class="float-right"><b>310</b>/400</span>
-                    <div class="progress progress-sm">
-                        <div class="progress-bar bg-danger" style="width: 75%"></div>
-                    </div>
-                </div>
-
-                <!-- /.progress-group -->
-                <div class="progress-group">
-                    <span class="progress-text">Visit Premium Page</span>
-                    <span class="float-right"><b>480</b>/800</span>
-                    <div class="progress progress-sm">
-                        <div class="progress-bar bg-success" style="width: 60%"></div>
-                    </div>
-                </div>
-
-                <!-- /.progress-group -->
-                <div class="progress-group">
-                    Send Inquiries
-                    <span class="float-right"><b>250</b>/500</span>
-                    <div class="progress progress-sm">
-                        <div class="progress-bar bg-warning" style="width: 50%"></div>
-                    </div>
-                </div>
-                <!-- /.progress-group -->
-            </div>
+            <canvas id="jurusan"></canvas>
         </div>
     </div>
 </div>
@@ -225,6 +185,61 @@
             legend: {
                 position: 'top'
             }
+        }
+    });
+
+    var jurusannya = document.getElementById('jurusan').getContext('2d');
+    var jurusan = new Chart(jurusannya, {
+        type: 'bar',
+        data: {
+            labels: [
+                <?php foreach ($jurusan as $j) : ?> '<?= $j['jurusan']; ?>',
+                <?php endforeach; ?>
+            ],
+            datasets: [{
+                label: 'Jurusan',
+                data: [
+                    <?php foreach ($jurusan as $j) : ?> '<?= $j['COUNT(jurusan)']; ?>',
+                    <?php endforeach; ?>
+                ],
+                backgroundColor: [
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderColor: [
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: 'Jurusan ',
+                fontSize: 25
+            },
+            legend: {
+                position: 'top'
+            },
+            scales: {
+                xAxes: [{
+                    barPercentage: 0.5,
+                    gridLines: {
+                        display: false
+                    }
+                }],
+                yAxes: [{
+                    gridLines: {
+                        zeroLineColor: "black",
+                        zeroLineWidth: 2
+                    },
+                    ticks: {
+                        min: 0,
+                        stepSize: 1
+                    },
+                }]
+            },
         }
     });
 </script>

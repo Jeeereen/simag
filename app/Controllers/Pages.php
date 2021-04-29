@@ -25,11 +25,31 @@ class Pages extends BaseController
     {
         $db      = \Config\Database::connect();
         $builder = $db->table('magang');
-        $builder->select('dinas,institut_id');
+        $builder->select('dinas,institut_id,jurusan');
         $builder->join('institut', 'institut.id = institut_id');
         $universitas = $builder->where('jenispendidikan', 'Universitas')->get()->getNumRows();
         $sekolah = $builder->get()->getNumRows() - $universitas;
 
+        // $query = $db->table('magang')->select('magang_id,jurusan')->groupBy('magang_id', 'jurusan');
+        $jurusan = $this->db->query("
+        SELECT 
+            jurusan,
+            COUNT(jurusan)
+        FROM
+            magang
+        GROUP BY jurusan
+        HAVING COUNT(jurusan) >= 1;
+        ")->getResultArray();
+
+        // dd($this->db->query("
+        // SELECT 
+        //     jurusan,
+        //     COUNT(jurusan)
+        // FROM
+        //     magang
+        // GROUP BY jurusan
+        // HAVING COUNT(jurusan) >= 1;
+        // ")->getResultArray());
         $myTime = new Time('-1 month');
 
         if (in_groups('user')) {
@@ -61,7 +81,8 @@ class Pages extends BaseController
             'lakilaki' => $lakilaki,
             'perempuan' => $perempuan,
             'universitas' => $universitas,
-            'sekolah' => $sekolah
+            'sekolah' => $sekolah,
+            'jurusan' => $jurusan
 
         ];
         return view('pages/home', $data);
@@ -73,7 +94,6 @@ class Pages extends BaseController
         $builder = $db->table('magang');
         $builder->select('*');
         $builder->join('nilai', 'nilai.nilai_id = magang.nilai');
-        // dd($builder->get()->getResultObject());
         $data = [
             'title' => ' Penilaian Magang',
             'magang' => $this->magangModel->getMagang(),

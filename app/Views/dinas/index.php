@@ -11,7 +11,6 @@
                         <th scope="col">Username</th>
                         <th scope="col">Nama Dinas</th>
                         <th scope="col">Logo</th>
-                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -22,7 +21,6 @@
                             <td><?= $d->username; ?></td>
                             <td><?= $d->fullname; ?></td>
                             <td><img src="<?= base_url(); ?>/img/<?= $d->user_image; ?>" class="gambar" alt=""></td>
-                            <td><a href="" class="btn btn-info">Detail</a></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

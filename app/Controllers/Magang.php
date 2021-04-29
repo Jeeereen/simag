@@ -22,12 +22,9 @@ class Magang extends BaseController
 
     public function index()
     {
-        $currentPage = $this->request->getVar('page_magang') ? $this->request->getVar('page_magang') : 1;
         $data = [
             'title' => 'Daftar Magang',
-            'magang' => $this->magangModel->paginate(6, 'magang'),
-            'pager' => $this->magangModel->pager,
-            'currentPage' => $currentPage
+            'magang' => $this->magangModel->getMagang()
         ];
         return view('magang/index', $data);
     }

@@ -17,14 +17,6 @@ class Dinas extends BaseController
 
     public function index()
     {
-        $currentPage = $this->request->getVar('page_users') ? $this->request->getVar('page_users') : 1;
-
-        $keyword = $this->request->getVar('keyword');
-        if ($keyword) {
-            $dinas = $this->dinasModel->search($keyword);
-        } else {
-            $dinas = $this->dinasModel;
-        }
         $data = [
             'title' => 'Daftar Dinas',
             'dinas' => $this->dinasModel->findAll()
@@ -38,5 +30,12 @@ class Dinas extends BaseController
             'title' => 'Detail Dinas',
         ];
         return view('dinas/index', $data);
+    }
+    public function pengaturan()
+    {
+        $data = [
+            'title' => 'Pengaturan Akun'
+        ];
+        return view('dinas/pengaturan', $data);
     }
 }
