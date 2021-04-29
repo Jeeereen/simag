@@ -176,7 +176,7 @@
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary mb-4">Masukkan Nilai</button>
+                <button type="submit" class="btn btn-success mb-4">Masukkan Nilai</button>
             </form>
         </div>
     </div>

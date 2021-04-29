@@ -37,7 +37,7 @@
                                     <td><?= $m['jurusan']; ?></td>
                                     <td><?= $m['nama']; ?></td>
                                     <td><img src="/img/<?= $m['gambar']; ?>" class="gambar" alt=""></td>
-                                    <td><a href="/magang/<?= $m['magang_id']; ?>" class="btn btn-info">Detail</a></td>
+                                    <td><a href="/magang/<?= $m['magang_id']; ?>" class="btn btn-success">Detail</a></td>
                                 </tr>
                             <?php endif; ?>
                         <?php else : ?>
@@ -47,7 +47,7 @@
                                 <td><?= $m['dinas']; ?></td>
                                 <td><?= $m['nama']; ?></td>
                                 <td><img src="/img/<?= $m['gambar']; ?>" class="gambar" alt=""></td>
-                                <td><a href="/magang/<?= $m['magang_id']; ?>" class="btn btn-info">Detail</a></td>
+                                <td><a href="/magang/<?= $m['magang_id']; ?>" class="btn btn-success">Detail</a></td>
                             </tr>
                         <?php endif; ?>
                     <?php endforeach; ?>

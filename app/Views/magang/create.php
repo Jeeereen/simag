@@ -162,7 +162,7 @@
                         <input type="text" class="form-control" id="jurusan" value="<?= old('jurusan'); ?>" name="jurusan">
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Tambah Magang</button>
+                <button type="submit" class="btn btn-success">Tambah Magang</button>
                 <br><br> <a href="/magang">Kembali ke daftar magang.</a>
             </form>
         </div>

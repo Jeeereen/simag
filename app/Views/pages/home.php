@@ -7,49 +7,53 @@
         <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box">
                 <div class="info-box-content">
-                    <span class="info-box-text">Total Magang Keseluruhan</span>
-                    <span class="info-box-number"><?= $totalmagang; ?> Orang</span>
+                    <span class="info-box-text text-center mb-3 fw-bolder">Total Magang Keseluruhan</span>
+                    <span class="info-box-number text-center"><?= $totalmagang; ?> Orang</span>
                 </div>
             </div>
         </div>
         <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box">
                 <div class="info-box-content">
-                    <span class="info-box-text">Total Magang Bulan Ini</span>
-                    <span class="info-box-number"><?= $bulanini; ?> Orang</span>
+                    <span class="info-box-text text-center mb-3">Total Magang Bulan Ini</span>
+                    <span class="info-box-number text-center"><?= $bulanini; ?> Orang</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box">
+                <div class="info-box-content">
+                    <span class="info-box-text text-center mb-3">Terdapat</span>
+                    <span class="info-box-number text-center"><?= $lakilaki; ?> Laki-laki dan <?= $perempuan; ?> Perempuan</span>
                 </div>
             </div>
         </div>
         <div class="col-12 col-sm-6 col-md-3">
-            <div class="info-box">
+             <div class="info-box">
                 <div class="info-box-content">
-                    <span class="info-box-text">Terdapat</span>
-                    <span class="info-box-number"><?= $lakilaki; ?> Laki-laki & <?= $perempuan; ?> Perempuan</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-3">
-            <div class="info-box">
-                <div class="info-box-content">
-                    <span class="info-box-text">Jenis Pendidikan</span>
-                    <span class="info-box-number"><?= $universitas; ?> Universitas & <?= $sekolah; ?> Sekolah</span>
+                    <span class="info-box-text text-center mb-3">Jenis Pendidikan </span>
+                    <span class="info-box-number text-center"><?= $universitas; ?> Universitas dan <?= $sekolah; ?> Sekolah</span>
                 </div>
             </div>
         </div>
     </div>
+    
+
+
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-6 mt-5 mb-3">
             <canvas id="jumlahMagang"></canvas>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6 mt-5 mb-3">
             <canvas id="jenisKelamin"></canvas>
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-6 mt-5 mb-5">
             <canvas id="jenisPendidikan"></canvas>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6 mt-5 mb-5">
             <canvas id="jurusan"></canvas>
         </div>
     </div>
@@ -68,12 +72,12 @@
                     <?= $bulanini; ?>,
                 ],
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(88, 212, 138, 0.8)',
+                    'rgba(70, 172, 32, 1)',
                 ],
                 borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
+                    'rgba(88, 212, 138, 0.8)',
+                    'rgba(70, 172, 32, 1)',
                 ],
                 borderWidth: 1
             }]
@@ -117,12 +121,12 @@
                 label: 'Magang',
                 data: [<?= $lakilaki; ?>, <?= $perempuan; ?>],
                 backgroundColor: [
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
+                    'rgba(75, 106, 104, 0.7)',
+                    'rgba(255, 99, 71, 0.4)'
                 ],
                 borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)'
+                    'rgba(75, 113, 102, 0.7)',
+                    'rgba(255, 99, 71, 0.6)'
                 ],
                 borderWidth: 1
             }]
@@ -166,12 +170,12 @@
                 label: 'Magang',
                 data: [<?= $universitas; ?>, <?= $sekolah; ?>],
                 backgroundColor: [
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
+                    'rgba(52, 192, 156, 0.7)',
+                    'rgba(75, 93, 72, 0.6)'
                 ],
                 borderColor: [
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
+                    'rgba(52, 192, 156, 0.9)',
+                    'rgba(75, 93, 72, 0.7)',
                 ],
                 borderWidth: 1
             }]
@@ -203,12 +207,12 @@
                     <?php endforeach; ?>
                 ],
                 backgroundColor: [
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
+                    'rgba(151, 174, 63, 0.7)',
+                    'rgba(151, 230, 170, 0.9)'
                 ],
                 borderColor: [
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
+                    'rgba(151, 174, 63, 0.9)',
+                    'rgba(151, 230, 170, 0.9)',
                 ],
                 borderWidth: 1
             }]

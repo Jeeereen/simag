@@ -29,7 +29,7 @@
                             <form action="<?= route_to('forgot') ?>" method="post">
                                 <?= csrf_field() ?>
                                 <input type="hidden" name="email" value="<?= user()->email; ?>">
-                                <button type="submit" class="btn btn-primary">Reset Password?</button>
+                                <button type="submit" class="btn btn-danger">Reset Password?</button>
                             </form>
                         </div>
                     </div>

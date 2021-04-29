@@ -23,7 +23,7 @@
                             <input type="text" class="form-control" id="kontak" name="kontak">
                         </div>
                         <input type="hidden" class="form-control" id="jenispendidikan" name="jenispendidikan" value="Sekolah">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn-success">Submit</button>
                     </form>
                 </div>
             </div>
@@ -58,8 +58,8 @@
                                                 <?= csrf_field(); ?>
                                                 <input type="hidden" name="_method" value="DELETE">
                                                 <input type="hidden" value="Sekolah" name="jenispendidikan">
-                                                <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda ingin menghapus data <?= $i['nama']; ?>')">Delete</button>
-                                                <a href="/institut/ubah/<?= $i['id']; ?>" class="btn btn-warning">Edit</a>
+                                                <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda ingin menghapus data <?= $i['nama']; ?>')"><i class="bi bi-trash"></i></button>
+                                                <a href="/institut/ubah/<?= $i['id']; ?>" class="btn btn-warning"><i class="bi bi-pencil"></i></a>
                                             </form>
                                         </td>
                                     </tr>

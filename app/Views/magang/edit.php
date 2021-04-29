@@ -148,7 +148,7 @@
                         <input type="text" class="form-control" id="jurusan" value="<?= (old('jurusan')) ? old('jurusan') : $magang['jurusan']; ?>" name="jurusan">
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Ubah Data Magang</button>
+                <button type="submit" class="btn btn-success">Ubah Data Magang</button>
                 <br><br> <a href="/magang">Kembali ke daftar magang.</a>
             </form>
         </div>
