@@ -48,7 +48,7 @@
         <!-- Brand Logo -->
         <a href="/pages" class="brand-link">
             <img src="<?= base_url(); ?>/img/gowa.png" alt="" class="brand-image img-circle elevation-3" style="opacity: .8">
-            <span class="brand-text font-weight-light">SIM Magang</span>
+            <span class="brand-text font-weight-light"><img src="<?= base_url(); ?>/img/logo.png" alt="" style="width: 50px;">-Magang</span>
         </a>
 
         <!-- Sidebar -->

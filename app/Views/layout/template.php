@@ -25,6 +25,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Menghubungkan Dengan CSS Pribadi -->
     <link rel="stylesheet" href="<?= base_url() ?>/template/dist/css/style.css">
     <link rel="stylesheet" href="<?= base_url() ?>/css/style_admin.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>/css/style.css">
     <!-- MDBootstrap Datatables  -->
     <link href="<?= base_url(); ?>/css/addons/datatables.min.css" rel="stylesheet">
     <!-- Chart.js  -->
@@ -56,6 +57,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- ./wrapper -->
 
     <!-- REQUIRED SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script src="<?= base_url(); ?>/js/main.js"></script>
 
     <!-- jQuery -->
     <script src="<?= base_url() ?>/template/plugins/jquery/jquery.min.js"></script>

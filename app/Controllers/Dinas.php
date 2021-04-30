@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 use CodeIgniter\Config\Config;
 use CodeIgniter\HTTP\Request;
+use Myth\Auth\Entities\User;
+use Myth\Auth\Models\UserModel;
 
 class Dinas extends BaseController
 {
@@ -37,5 +39,27 @@ class Dinas extends BaseController
             'title' => 'Pengaturan Akun'
         ];
         return view('dinas/pengaturan', $data);
+    }
+    public function tambah()
+    {
+        $data = [
+            'title' => 'Form Tambah Data Dinas'
+        ];
+        return view('dinas/tambah', $data);
+    }
+    public function hapus($id)
+    {
+        $this->dinasModel->where(['id' => $id])->delete();
+        session()->setFlashdata('pesan', 'Data berhasil dihapus.');
+        return redirect()->to('/dinas');
+    }
+    public function ubah($username)
+    {
+        $dinas =  $this->dinasModel->where(['username' => $username])->get()->getRowArray();
+        $data = [
+            'title' => 'Ubah Akun',
+            'dinas' => $dinas
+        ];
+        return view('dinas/ubah', $data);
     }
 }
