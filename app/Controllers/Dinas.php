@@ -65,13 +65,6 @@ class Dinas extends BaseController
     }
     public function update($id)
     {
-        dd($this->request->getFile('logo'));
-        $rules = [
-            'logo'      => 'max_size[gambar,2048]'
-        ];
-        if (!$this->validate($rules)) {
-            return redirect()->back()->withInput();
-        }
         $gambarLama = user()->user_image;
         $fileGambar = $this->request->getFile('logo');
         if ($fileGambar->getError() == 4) {

@@ -31,12 +31,7 @@
                                 <td><img src="<?= base_url(); ?>/img/<?= $d->user_image; ?>" class="gambar" alt=""></td>
                                 <td>
                                     <a href="/dinas/ubah/<?= $d->username; ?>" class="btn btn-warning"><i class="bi bi-pencil"></i></a>
-                                    <form action="/dinas/<?= $d->id; ?>" method="POST" class="d-inline">
-                                        <?= csrf_field(); ?>
-                                        <input type="hidden" name="_method" value="DELETE">
-                                        <input type="hidden" value="Sekolah" name="jenispendidikan">
-                                        <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda ingin menghapus data <?= $d->fullname; ?>')"><i class="bi bi-trash"></i></button>
-                                    </form>
+                                    <a href="/dinas/hapus/<?= $d->id; ?>" class="btn btn-danger "><i class="bi bi-trash"></i></i></a>
                                 </td>
                             </tr>
                         <?php endif; ?>
