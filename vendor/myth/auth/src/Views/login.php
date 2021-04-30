@@ -74,9 +74,6 @@
 					<button type="submit" class="btn-login"><?= lang('Auth.loginAction') ?></button>
 				</form>
 			</div>
-			<?php if ($config->allowRegistration) : ?>
-				<p><a href="<?= route_to('register') ?>"><?= lang('Auth.needAnAccount') ?></a></p>
-			<?php endif; ?>
 		</div>
 
 	</div>

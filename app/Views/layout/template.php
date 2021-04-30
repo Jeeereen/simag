@@ -51,7 +51,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Main Footer -->
     <footer class="main-footer text-center">
         <!-- Default to the left -->
-        <strong>Copyright &copy; <?= date('Y'); ?> UNHAS2017.</strong> <?= user()->username; ?>. - All Rights Reserved
+        <strong>Copyright &copy; <?= date('Y'); ?> IF17 UNHAS.</strong> <?= user()->username; ?>. - All Rights Reserved
     </footer>
     </div>
     <!-- ./wrapper -->
@@ -79,6 +79,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
             const gambar = document.querySelector('#gambar');
             const gambarLabel = document.querySelector('.custom-file-label');
             const imgPreview = document.querySelector('.img-preview');
+
+            gambarLabel.textContent = gambar.files[0].name;
+
+            const fileGambar = new FileReader();
+            fileGambar.readAsDataURL(gambar.files[0]);
+
+            fileGambar.onload = function(e) {
+                imgPreview.src = e.target.result;
+            }
+        }
+
+        function previewLogo() {
+            const gambar = document.querySelector('#logo');
+            const gambarLabel = document.querySelector('.custom-logo-label');
+            const imgPreview = document.querySelector('.logo-preview');
 
             gambarLabel.textContent = gambar.files[0].name;
 

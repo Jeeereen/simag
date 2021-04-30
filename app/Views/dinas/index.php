@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <a href="/dinas/tambah" class="btn btn-success">Tambah Dinas</a>
+            <a href="/dinas/tambah" class="btn btn-success"><i class="bi bi-person-plus"></i></a>
             <?php if (session()->getFlashdata('pesan')) : ?>
                 <div class="alert alert-info" role="alert">
                     <?= session()->getFlashdata('pesan'); ?>
@@ -23,13 +23,23 @@
                 <tbody>
                     <?php $i = 1; ?>
                     <?php foreach ($dinas as $d) : ?>
-                        <tr>
-                            <th scope="row"><?= $i++; ?></th>
-                            <td><?= $d->username; ?></td>
-                            <td><?= $d->fullname; ?></td>
-                            <td><img src="<?= base_url(); ?>/img/<?= $d->user_image; ?>" class="gambar" alt=""></td>
-                            <td><a href="/dinas/ubah/<?= $d->username; ?>" class="btn btn-warning">Ubah Dinas</a> <a href="/dinas/hapus/<?= $d->id; ?>" class="btn btn-danger">Hapus Dinas</a></td>
-                        </tr>
+                        <?php if ($d->id > 1) : ?>
+                            <tr>
+                                <th scope="row"><?= $i++; ?></th>
+                                <td><?= $d->username; ?></td>
+                                <td><?= $d->fullname; ?></td>
+                                <td><img src="<?= base_url(); ?>/img/<?= $d->user_image; ?>" class="gambar" alt=""></td>
+                                <td>
+                                    <a href="/dinas/ubah/<?= $d->username; ?>" class="btn btn-warning"><i class="bi bi-pencil"></i></a>
+                                    <form action="/dinas/<?= $d->id; ?>" method="POST" class="d-inline">
+                                        <?= csrf_field(); ?>
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <input type="hidden" value="Sekolah" name="jenispendidikan">
+                                        <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda ingin menghapus data <?= $d->fullname; ?>')"><i class="bi bi-trash"></i></button>
+                                    </form>
+                                </td>
+                            </tr>
+                        <?php endif; ?>
                     <?php endforeach; ?>
                 </tbody>
             </table>

@@ -49,7 +49,7 @@
                             <br>
 
                             <button type="submit" class="btn btn-success d-inline"><?= lang('Auth.resetPassword') ?></button>
-                            <a href="/dinas/<?= ($dinas['username']) ? 'dinas/' . $dinas['username'] : 'pengaturan/' . user()->username; ?>" class="btn btn-warning my-3">Kembali ke Profil</a>
+                            <a href="/dinas/<?= ($dinas['username']) ? 'ubah/' . $dinas['username'] : 'pengaturan/' . user()->username; ?>" class="btn btn-warning my-3">Kembali ke Profil</a>
                         </form>
 
                     </div>

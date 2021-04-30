@@ -154,7 +154,7 @@ class AuthController extends Controller
 		$rules = [
 			'username'  	=> 'required|alpha_numeric_space|min_length[3]|is_unique[users.username]',
 			'email'			=> 'required|valid_email|is_unique[users.email]',
-			// 'fullname' 		=> 'required',
+			'fullname' 		=> 'required',
 			'password'	 	=> 'required|strong_password',
 			'pass_confirm' 	=> 'required|matches[password]',
 		];

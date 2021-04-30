@@ -31,6 +31,8 @@
                                 <input type="hidden" name="email" value="<?= $dinas['email']; ?>">
                                 <button type="submit" class="btn btn-danger">Reset Password?</button>
                             </form>
+                            <br><br>
+                            <a href="/dinas">Kembali ke daftar dinas.</a>
                         </div>
                     </div>
                 </div>

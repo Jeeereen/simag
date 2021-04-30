@@ -36,7 +36,8 @@ class Dinas extends BaseController
     public function pengaturan()
     {
         $data = [
-            'title' => 'Pengaturan Akun'
+            'title' => 'Pengaturan Akun',
+            'validation' => \Config\Services::validation(),
         ];
         return view('dinas/pengaturan', $data);
     }
@@ -61,5 +62,32 @@ class Dinas extends BaseController
             'dinas' => $dinas
         ];
         return view('dinas/ubah', $data);
+    }
+    public function update($id)
+    {
+        dd($this->request->getFile('logo'));
+        $rules = [
+            'logo'      => 'max_size[gambar,2048]'
+        ];
+        if (!$this->validate($rules)) {
+            return redirect()->back()->withInput();
+        }
+        $gambarLama = user()->user_image;
+        $fileGambar = $this->request->getFile('logo');
+        if ($fileGambar->getError() == 4) {
+            $namaGambar = $gambarLama;
+        } else {
+            $namaGambar = $fileGambar->getRandomName();
+            $fileGambar->move('img', $namaGambar);
+            if ($gambarLama != 'default_gowa.png') {
+
+                unlink('img/' . $gambarLama);
+            }
+        }
+
+        $this->dinasModel->update($id, [
+            'user_image' => $namaGambar
+        ]);
+        return redirect()->to('/dinas/pengaturan');
     }
 }
