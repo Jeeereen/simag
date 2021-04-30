@@ -10,10 +10,10 @@
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="/magang/<?= $magang['magang_id']; ?>">Detail</a>
+                                    <a class="nav-link" aria-current="page" href="/magang/<?= $magang['magang_id']; ?>">Detail</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/nilai/hasil/<?= $magang['magang_id']; ?>">Hasil Penilaian</a>
+                                    <a class="nav-link active" href="/nilai/hasil/<?= $magang['magang_id']; ?>">Hasil Penilaian</a>
                                 </li>
                             </ul>
                         </div>
@@ -37,7 +37,7 @@
                                     </td>
                                     <td>
                                         <b>Periode Magang</b><br>
-                                        <?= $nilai['magangmasuk']; ?><b> s/d </b><?= $nilai['magangkeluar']; ?>
+                                        <?= $magang['magangmasuk']; ?><b> s/d </b><?= $magang['magangkeluar']; ?>
                                     </td>
                                 </tr>
                                 <tr>

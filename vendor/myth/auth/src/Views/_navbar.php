@@ -16,7 +16,7 @@
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
             <img src="<?= base_url(); ?>/asset/img/lambang.png" alt="" width="30" height="30">
-            <span class="">SISTEM INFORMASI MANAGAMENT MAHASISWA</span>
+            <span class="">SISTEM INFORMASI MANAGAMENT MAGANG</span>
         </a>
     </div>
 </nav>

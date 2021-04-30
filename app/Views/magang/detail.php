@@ -25,7 +25,7 @@
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h5 class="card-title mb-2"><?= $magang['nama']; ?></h5>
+                            <h5 class="card-title mb-2 "><b><?= $magang['nama']; ?></b></h5>
                             <p class="card-text"><b>Periode Magang</b> : <?= $magang['magangmasuk']; ?> s/d <?= $magang['magangkeluar']; ?></p>
                             <p class="card-text"><b>Dinas</b> : <?= $magang['dinas']; ?></p>
                             <p class="card-text"><b>NIK</b> : <?= $magang['nik']; ?></p>
@@ -37,7 +37,7 @@
                             <p class="card-text"><b>Tanggal Lahir</b> : <?= $magang['ttl']; ?></p>
                             <p class="card-text"><b>Jenis Kelamin</b> : <?= $magang['jeniskelamin']; ?></p>
                             <p class="card-text"><b>Alamat</b> : <?= $magang['alamat']; ?></p>
-                            <p class="card-text"><b>Nomor Telepon</b> : <?= $magang['notp']; ?></p>
+                            <p class="card-text"><b>Nomor Telepon</b> : +62<?= $magang['notp']; ?></p>
                             <p class="card-text"><b>Agama</b> : <?= $magang['agama']; ?></p>
 
                             <a href="/magang/edit/<?= $magang['magang_id']; ?>" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>

@@ -108,7 +108,7 @@
                 <div class="row mb-3">
                     <label for="notp" class="col-sm-2 col-form-label">Nomor Telepon</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="notp" value="<?= (old('notp')) ? old('notp') : $magang['notp']; ?>" name="notp" placeholder="08**********">
+                        <input type="text" class="form-control" id="notp" value="<?= (old('notp')) ? old('notp') : $magang['notp']; ?>" name="notp" placeholder="**********">
                     </div>
                 </div>
                 <div class="row mb-3">

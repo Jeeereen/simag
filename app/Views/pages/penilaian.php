@@ -23,25 +23,6 @@
                     </select>
                 </div>
                 <div class="mb-3 row">
-                    <label for="" class="col-sm-4 col-form-label">Periode Magang</label>
-                    <div class="col-sm-8">
-                        <div class="input-group">
-                            <input type="date" class="form-control" name="magangmasuk">
-                            <input type="date" class="form-control" name="magangkeluar">
-                        </div>
-                        <div class=" container">
-                            <div class="row">
-                                <div class="col">
-                                    <small class="text-muted">Dari..</small>
-                                </div>
-                                <div class="col">
-                                    <small class="text-muted">Hingga..</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mb-3 row">
                     <label for="penilai" class="col-sm-4 col-form-label">Nama Penilai</label>
                     <div class="col-sm-8">
                         <input type="text" class="form-control" id="penilai" name="penilai">

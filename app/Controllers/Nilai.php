@@ -30,8 +30,6 @@ class Nilai extends BaseController
         $this->nilaiModel->save([
             'penilai' => $this->request->getVar('penilai'),
             'magang_id' => $this->request->getVar('magang_id'),
-            'magangmasuk' => $this->request->getVar('magangmasuk'),
-            'magangkeluar' => $this->request->getVar('magangkeluar'),
             'kerajinan' => $this->request->getVar('kerajinan'),
             'dayatangkap' => $this->request->getVar('dayatangkap'),
             'kemampuan' => $this->request->getVar('kemampuan'),
@@ -70,8 +68,6 @@ class Nilai extends BaseController
             'nilai_id' => $nilai_id,
             'penilai' => $this->request->getVar('penilai'),
             'magang_id' => $this->request->getVar('magang_id'),
-            'magangmasuk' => $this->request->getVar('magangmasuk'),
-            'magangkeluar' => $this->request->getVar('magangkeluar'),
             'kerajinan' => $this->request->getVar('kerajinan'),
             'dayatangkap' => $this->request->getVar('dayatangkap'),
             'kemampuan' => $this->request->getVar('kemampuan'),
